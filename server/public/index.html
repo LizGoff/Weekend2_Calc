@@ -16,19 +16,42 @@
         <h1>Calculator</h1>
     </section>
     <div>
-        <input type='number' placeHolder='Number' id='inputOne' />
+    <span id='topRow'>
+        <button id='inputOne'>1</button>
+        <button id='inputTwo'>2</button>
+        <button id='inputThree'>3</button>
+    </span>
     </div>
     <div>
-        <input type='number' placeHolder='Number' id='inputTwo' />
+    <span id='middleRow'>
+        <button id='inputFour'>4</button>
+        <button id='inputFive'>5</button>
+        <button id='inputSix'>6</button>
+    </span>
     </div>
-    <span>
+    <div>
+    <span id='bottomRow'>
+        <button id='inputSeven'>7</button>
+        <button id='inputEight'>8</button>
+        <button id='inputNine'>9</button>
+    </span>
+    </div>
+    <div>
+    <span id=calculationRow>
         <button id='add'>+</butoon>
-        <button id='enter'>=</button>
+        <button id='inputZero'>0</button>
         <button id='subtract'>-</button>
     </span>
+    </div>
+    <span id='secondCalculationRow'>
+        <button id='multiply'>*</button>
+        <button id='enter'>=</button>
+        <button id='divide'>/</button>
+    </span>
+    </div>
 
     <section>
-        <h2 id='total'>Total</h2>
+        <h2 id='total'></h2>
     </section>
 
     <table id='mathTable'>

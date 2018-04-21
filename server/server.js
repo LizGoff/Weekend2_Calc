@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //     res.sendStatus(200);
 // });
 
-// math shoud be calculated on server side
+// math to be calculated on server side
 
 app.listen(PORT, () => {
     console.log(`Running on port ${PORT}`);
