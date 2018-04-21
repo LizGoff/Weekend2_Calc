@@ -10,17 +10,19 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // get requests like the one below;
-// app.get('/records', (req, res) => {
-//     res.send(recordCollection);
-// });
+
+app.get('/array', (req, res) => {
+    res.send(totalArray);
+});
 
 // post requests like this one seen below;
 // don't forget the 200!
-// app.post('/add-record', (req, res) => {
-//     console.log(req.body);
-//     recordCollection.push(req.body);
-//     res.sendStatus(200);
-// });
+
+app.post('/add-to-array', (req, res) => {
+    console.log(req.body);
+    totalArray.push(req.body);
+    res.sendStatus(200);
+});
 
 // math to be calculated on server side
 

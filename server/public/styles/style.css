@@ -2,27 +2,3 @@ body {
     background: #F0F8FF;
 }
 
-#topRow {
-    display: flex;
-    justify-content: center;
-}
-
-#middleRow {
-    display: flex;
-    justify-content: center;
-}
-
-#bottomRow {
-    display: flex;
-    justify-content: center;
-}
-
-#calculationRow {
-    display: flex;
-    justify-content: center;
-}
-
-#secondCalculationRow {
-    display: flex;
-    justify-content: center;
-}
