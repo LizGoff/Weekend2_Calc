@@ -8,6 +8,8 @@ console.log('doc ready');
 function onReady() {
     console.log('jquery ready');
 
+
+
     $('#inputOne').on('click', oneClickHandler);
     $('#inputTwo').on('click', twoClickHandler);
     $('#inputThree').on('click', threeClickHandler);
@@ -31,9 +33,39 @@ function onReady() {
 
 // these functions need to be pushed into an array and then use math function (+-*/) for the total
 
+// function addNewMathProblem() {
+//     const addNew = {
+//         firstNumber: 
+//         operator: 
+//         secondNumber: 
+    
+//     }
+// }
+
+function addNew() {
+    const newProblem = {
+    firstNumber: '1',
+    operator: '+',
+    secondNumber: '5}'
+    };
+    console.log('new object', newProblem);
+    $.ajax({
+        method: 'POST,
+        url: '/add-math',
+        data: newProblem
+   })
+        .then(function (response) {
+            console.log(response);
+        });
+        // getHistory
+} // end addNew
+
+
 function oneClickHandler() {
-    console.log('one clicked');
+    let one = 1;
+    console.log(one);
 }
+
 
 function twoClickHandler() {
     console.log('two clicked');
@@ -85,6 +117,7 @@ function multiplyClickHandler() {
 
 function totalClickHandler() {
     console.log('total clicked');
+
 }
 
 function divideClickHandler() {
@@ -97,9 +130,9 @@ function displayTotal() {
     $('#total').text(showTotal);
 }
 
-// function addNewInputAddition() {
-//     $('#mathHistory').append(`<tr><td>${inputOne}</td><td>${add}</td><td>${inputtwo}</td></tr>`);
-// }
+ function addNewInputAddition() {
+    console.log(totalArray[i]);
+}
 
 
 // I will need a forEach fir mathHistory table to be appended

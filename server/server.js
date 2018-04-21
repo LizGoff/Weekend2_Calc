@@ -4,6 +4,7 @@ const app = express();
 const PORT = 5000;
 
 // place to connect with files
+const totalArray = require('./modules/totalArray');
 
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
