@@ -4,26 +4,63 @@ let showTotal = 0;
 $(document).ready(onReady);
 
 function onReady() {
+    function numOne() {
+        $('#inputOne').on('click', oneClickHandler);
+        $('#inputTwo').on('click', twoClickHandler);
+        $('#inputThree').on('click', threeClickHandler);
 
-    $('#inputOne').on('click', oneClickHandler);
-    $('#inputTwo').on('click', twoClickHandler);
-    $('#inputThree').on('click', threeClickHandler);
+        $('#inputFour').on('click', fourClickHandler);
+        $('#inputFive').on('click', fiveClickHandler);
+        $('#inputSix').on('click', sixClickHandler);
 
-    $('#inputFour').on('click', fourClickHandler);
-    $('#inputFive').on('click', fiveClickHandler);
-    $('#inputSix').on('click', sixClickHandler);
+        $('#inputSeven').on('click', sevenClickHandler);
+        $('#inputEight').on('click', eightClickHandler);
+        $('#inputNine').on('click', nineClickHandler);
 
-    $('#inputSeven').on('click', sevenClickHandler);
-    $('#inputEight').on('click', eightClickHandler);
-    $('#inputNine').on('click', nineClickHandler);
+        $('#add').on('click', additionClickHandler);
+        $('#inputZero').on('click', zeroClickHandler);
+        $('#subtract').on('click', subtractionClickHandler);
 
-    $('#add').on('click', additionClickHandler);
-    $('#inputZero').on('click', zeroClickHandler);
-    $('#subtract').on('click', subtractionClickHandler);
+        $('#multiply').on('click', multiplyClickHandler);
+        $('#enter').on('click', totalClickHandler);
+        $('#divide').on('click', divideClickHandler);
+    }
 
-    $('#multiply').on('click', multiplyClickHandler);
-    $('#enter').on('click', totalClickHandler);
-    $('#divide').on('click', divideClickHandler);
+    function numTwo() {
+        $('#inputOne').on('click', oneClickHandler);
+        $('#inputTwo').on('click', twoClickHandler);
+        $('#inputThree').on('click', threeClickHandler);
+    
+        $('#inputFour').on('click', fourClickHandler);
+        $('#inputFive').on('click', fiveClickHandler);
+        $('#inputSix').on('click', sixClickHandler);
+    
+        $('#inputSeven').on('click', sevenClickHandler);
+        $('#inputEight').on('click', eightClickHandler);
+        $('#inputNine').on('click', nineClickHandler);
+    
+        $('#add').on('click', additionClickHandler);
+        $('#inputZero').on('click', zeroClickHandler);
+        $('#subtract').on('click', subtractionClickHandler);
+    
+        $('#multiply').on('click', multiplyClickHandler);
+        $('#enter').on('click', totalClickHandler);
+        $('#divide').on('click', divideClickHandler);
+    
+    }
+    function mainOperations() {
+        function addNums(); {
+
+        }
+        function subtractNums(); {
+
+        }
+        function multiplyNums(); {
+
+        }
+        function divideNums(); {
+            
+        }
 
     displayTotal();
 }
