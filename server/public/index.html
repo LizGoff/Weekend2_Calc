@@ -16,64 +16,43 @@
         <h1>Calculator</h1>
     </section>
     <div id='calculatorMain'>
-        <table>
+        <table in=mainTable>
             <tr>
                 <td>
-                    <input type='button' class='number' id='inputZero' value=0>
+                    <input class='number' id='numOne'>
                 </td>
                 <td>
-                    <input type='button' class='number' id='inputOne' value=1>
-                </td>
-                <td>
-                    <input type='button' class='number' id='inputTwo' value=2>
-                </td>
-                <td>
-                    <input type='button' class='number' id='inputThree' value=3>
-                </td>
-                <td>
-                    <input type='button' class='number' id='inputFour' value=4>
+                    <input class='number' id='numTwo'>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type='button' class='number' id='inputFive' value=5>
+                    <input type='button' class='calculations' id='addition' value=+ />
                 </td>
                 <td>
-                    <input type='button' class='number' id='inputSix' value=6>
+                    <input type='button' class='calculations' id='subtraction' value=- />
                 </td>
                 <td>
-                    <input type='button' class='number' id='inputSeven' value=7>
+                    <input type='button' class='calculations' id='multiply' value=* />
                 </td>
                 <td>
-                    <input type='button' class='number' id='inputEight' value=8>
+                    <input type='button' class='calculations' id='divide' value=/ />
                 </td>
                 <td>
-                    <input type='button' class='number' id='inputNine' value=9>
+                        <!-- <input type='button' class='calculations' id='clear' value=C /> -->
                 </td>
-            </tr>
-            <tr>
+    
                 <td>
-                    <input type='button' class='calculations' id='addition' value=+>
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='subtraction' value=- >
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='multiply' value=*>
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='divide' value=//>
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='equals' value==/>
+                    <!-- <input type='button' class='calculations' id='equals' value== /> -->
                 </td>
             </tr>
         </table>
     </div>
     <section>
         <h2 id='total'>Total</h2>
+        <p id='showTotal'></p>
     </section>
-    <section id=historyTable>
+    <section id='historyTable'>
         <table id='mathTable'>
             <thead>
                 <tr>

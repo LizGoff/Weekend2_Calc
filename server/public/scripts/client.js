@@ -1,187 +1,103 @@
 
-let showTotal = 0;
-
 $(document).ready(onReady);
 
+
 function onReady() {
+    // $('#addition').on('click', additionClickHandler);
+    // $('#subtraction').on('click', subtractionClickHandler);
+    // $('#multiply').on('click', multiplyClickHandler);
+    // $('#divide').on('click', divideClickHandler);
+    $('.calculations').on('click', enterNew);
+    // $('#clear').on('click', clearButton);
 
-    // function numOne() {
-        $('#inputOne').on('click', oneClickHandler);
-        $('#inputTwo').on('click', twoClickHandler);
-        $('#inputThree').on('click', threeClickHandler);
-
-        $('#inputFour').on('click', fourClickHandler);
-        $('#inputFive').on('click', fiveClickHandler);
-        $('#inputSix').on('click', sixClickHandler);
-
-        $('#inputSeven').on('click', sevenClickHandler);
-        $('#inputEight').on('click', eightClickHandler);
-        $('#inputNine').on('click', nineClickHandler);
-
-        $('#add').on('click', additionClickHandler);
-        $('#inputZero').on('click', zeroClickHandler);
-        $('#subtract').on('click', subtractionClickHandler);
-
-        $('#multiply').on('click', multiplyClickHandler);
-        $('#enter').on('click', totalClickHandler);
-        $('#divide').on('click', divideClickHandler);
-    // }
-
-    // function numTwo() {
-    //     $('#inputOne').on('click', oneClickHandler);
-    //     $('#inputTwo').on('click', twoClickHandler);
-    //     $('#inputThree').on('click', threeClickHandler);
-    
-    //     $('#inputFour').on('click', fourClickHandler);
-    //     $('#inputFive').on('click', fiveClickHandler);
-    //     $('#inputSix').on('click', sixClickHandler);
-    
-    //     $('#inputSeven').on('click', sevenClickHandler);
-    //     $('#inputEight').on('click', eightClickHandler);
-    //     $('#inputNine').on('click', nineClickHandler);
-    
-    //     $('#add').on('click', additionClickHandler);
-    //     $('#inputZero').on('click', zeroClickHandler);
-    //     $('#subtract').on('click', subtractionClickHandler);
-    
-    //     $('#multiply').on('click', multiplyClickHandler);
-    //     $('#enter').on('click', totalClickHandler);
-    //     $('#divide').on('click', divideClickHandler);
-    
-    // }
-    // function mainOperations() {
-    //     function addNums(); {
-
-    //     }
-    //     function subtractNums(); {
-
-    //     }
-    //     function multiplyNums(); {
-
-    //     }
-    //     function divideNums(); {
-
-    //     }
-
-    displayTotal();
+    getHistory();
 }
 
-// functions need to be pushed into an array and then use math function (+-*/) for the total
-
-function oneClickHandler() {
-    let one = 1;
-    console.log(one);
-}
-
-function twoClickHandler() {
-    let two = 2;
-    console.log(two);
-}
-
-function threeClickHandler() {
-    let three = 3;
-    console.log(three);
-}
-
-function fourClickHandler() {
-    let four = 4;
-    console.log(four);
-
-}
-
-function fiveClickHandler() {
-    let five = 5;
-    console.log(five);
-}
-
-function sixClickHandler() {
-    let six = 6;
-    console.log(six);
-}
-
-function sevenClickHandler() {
-    let seven = 7;
-    console.log(seven);
-}
-
-function eightClickHandler() {
-    let eight = 8;
-    console.log(eight);
-}
-
-function nineClickHandler() {
-    let nine = 9;
-    console.log(nine);
-}
-
-
+// function clearButton() {
+//     $('#mathHistory').val('');
+// }
 
 function additionClickHandler() {
-    return numONe + numTwo;
-    console.log(total);
-}
-
-function zeroClickHandler() {
-    let zero = 0;
-    console.log(zero);
+    console.log('addition was clicked')
 }
 
 function subtractionClickHandler() {
-    console.log(subtraction);
+    console.log('subtraction was clicked')
 }
 
 function multiplyClickHandler() {
-    console.log(multiply);
+    console.log('multiply was clicked')
 }
 
 function divideClickHandler() {
-    console.log(divide);
+    console.log('division was clicked')
 }
 
-function totalClickHandler() {
-    const total = {
-        firstNumber: $('#number').val(),
-        operator: $('#calculations').val(),
-        secondNumber: $('#number').val(),
-        // equals:
-        // total: 
+function displayTotal() {
+    $.ajax({
+        method: 'GET',
+        url: '/total-get'
 
-    };
-    console.log('new total object', total);
+    })
+        .then(function (response) {
+        console.log(response);
+        console.log('display total');
+        // return total;
+        $('#showTotal').text(response);
+    });
+}
+
+function enterNew() {
+    console.log('total was clicked');
+    const newEntry = {
+        firstNumber: $('#numOne').val(),
+        operator: $(this).val(),
+        secondNumber: $('#numTwo').val(),
+        equals: '=',
+        total: ''
+};
     $.ajax({
         method: 'POST',
         url: '/add-to-array',
-        data: total
+        data: newEntry
     })
         .then(function (response) {
             console.log(response);
+            displayTotal()
+            getHistory()
         });
 }
 
 function getHistory() {
-$.ajax({
-    method: 'GET',
-    url: '/array'
-})
-    .then(function (response) {
-        console.log(response);
-        // $('mathHistory').empty();
-        response.forEach(function (newProblem) {
-            $('mathHistory').prepend(`<tr>
-             <td>${newProblem.firstNumber}</td>
-            <td>${newProblem.secondNumber}</td>
+    $.ajax({
+        method: 'GET',
+        url: '/array'
+    })
+        .then(function (response) {
+            console.log(response);
+            $('#mathHistory').empty();
+            response.forEach(function (newProblem) {
+            $('#mathHistory').prepend(`<tr>
+            <td>${newProblem.firstNumber}</td>
             <td>${newProblem.operator}</td>
+            <td>${newProblem.secondNumber}</td><td>=</td><td>${newProblem.total}</td>
         </tr>`);
-        })
-    });
+            })
+        });
 }
 
-function displayTotal() {
-    console.log('total shows up here');
-    let showTotal = 0;
 
-    $('#total').text(showTotal);
-}
+
+
+
+
+
+
+
+
+
+
+// saving some coding below as I am starting over....yet again.
 
 
 
@@ -205,3 +121,50 @@ function displayTotal() {
 //         });
 //     // getHistory
 // } // end addNew
+
+
+// function oneClickHandler() {
+//     let one = 1;
+//     console.log(one);
+// }
+
+// function twoClickHandler() {
+//     let two = 2;
+//     console.log(two);
+// }
+
+// function threeClickHandler() {
+//     let three = 3;
+//     console.log(three);
+// }
+
+// function fourClickHandler() {
+//     let four = 4;
+//     console.log(four);
+
+// }
+
+// function fiveClickHandler() {
+//     let five = 5;
+//     console.log(five);
+// }
+
+// function sixClickHandler() {
+//     let six = 6;
+//     console.log(six);
+// }
+
+// function sevenClickHandler() {
+//     let seven = 7;
+//     console.log(seven);
+// }
+
+// function eightClickHandler() {
+//     let eight = 8;
+//     console.log(eight);
+// }
+
+// function nineClickHandler() {
+//     let nine = 9;
+//     console.log(nine);
+// }
