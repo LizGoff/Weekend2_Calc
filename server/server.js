@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 5000;
+const PORT = 5000; 
 
 // place to connect with files
 const totalArray = require('./modules/totalArray');

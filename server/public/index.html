@@ -16,36 +16,30 @@
         <h1>Calculator</h1>
     </section>
     <div id='calculatorMain'>
-        <table in=mainTable>
-            <tr>
-                <td>
-                    <input class='number' id='numOne'>
-                </td>
-                <td>
-                    <input class='number' id='numTwo'>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type='button' class='calculations' id='addition' value=+ />
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='subtraction' value=- />
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='multiply' value=* />
-                </td>
-                <td>
-                    <input type='button' class='calculations' id='divide' value=/ />
-                </td>
-                <td>
-                        <!-- <input type='button' class='calculations' id='clear' value=C /> -->
-                </td>
-    
-                <td>
-                    <!-- <input type='button' class='calculations' id='equals' value== /> -->
-                </td>
-            </tr>
+        <table in='mainTable'>
+            <section id='inputFields'>
+                <tr>
+                    <td>
+                        <input class='number' id='numOne'>
+                    </td>
+                    <td>
+                        <input class='number' id='numTwo'>
+                    </td>
+                </tr>
+            </section>
+            <section id='buttonGroup'>
+                <tr id='buttonStyles'>
+                    <td>
+                        <input type='button' class='calculations' id='addition' value=+ />
+                        <input type='button' class='calculations' id='subtraction' value=- />
+                        <input type='button' class='calculations' id='multiply' value=* />
+                        <input type='button' class='calculations' id='divide' value=/ />
+                    </td>
+                    <td>
+                        <input type='button' id='clear' value=Clear />
+                    </td>
+                </tr>
+            </section>
         </table>
     </div>
     <section>

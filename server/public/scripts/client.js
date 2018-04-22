@@ -4,8 +4,15 @@ $(document).ready(onReady);
 
 function onReady() {
     $('.calculations').on('click', enterNew);
+    $('#clear').on('click', clearFields);
 
     getHistory();
+}
+
+function clearFields() {
+    $('.number').val('');
+    $('#showTotal').text('');
+    $('#mathHistory').empty('');
 }
 
 function displayTotal() {
