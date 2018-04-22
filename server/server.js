@@ -19,6 +19,12 @@ app.get('/total-get', (req, res) => {
     res.send(String(totalArray[totalArray.length-1].total));
 });
 
+app.get('/total-get-rid-of', (req, res) => {
+    totalArray.splice(0,totalArray.length);
+    res.sendStatus(200);
+});
+
+
 // post requests like this one seen below;
 app.post('/add-to-array', (req, res) => {
     console.log(req.body);

@@ -12,18 +12,16 @@
 </head>
 
 <body>
-    <section>
+    <section id='topOfPage'>
         <h1>Calculator</h1>
     </section>
     <div id='calculatorMain'>
         <table in='mainTable'>
-            <section id='inputFields'>
+            <section>
                 <tr>
-                    <td>
-                        <input class='number' id='numOne'>
-                    </td>
-                    <td>
-                        <input class='number' id='numTwo'>
+                    <td id='inputFields'>
+                        <input class='number' placeHolder= "First Entry" id='numOne'>
+                        <input class='number' placeHolder= "Second Entry" id='numTwo'>
                     </td>
                 </tr>
             </section>
@@ -50,7 +48,7 @@
         <table id='mathTable'>
             <thead>
                 <tr>
-                    <th>Math History</th>
+                    <th id='mathText'>Math History</th>
                 </tr>
             </thead>
             <tbody id='mathHistory'>

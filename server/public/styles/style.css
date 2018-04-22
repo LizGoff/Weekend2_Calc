@@ -5,10 +5,58 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: #F0F8FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+
 } 
 
-#buttonGroup {
+h1 {
+text-align: left;
+margin-top: 50px;
+margin-left: -20px;
+margin-bottom: -2px;
+padding: 40px;
+}
+
+#topOfPage {
+    width: 55%;
+    height: 100%;
+    background: #808080;
+    opacity: 0.85;
+    box-shadow: 10px 10px 30px #696969;
+}
+
+.number {
+    width: 100px;
+    height: 20px;
+    margin-top: 50px;
+    margin-left: 5px;
+
+    margin-bottom: -5;
+
+}
+
+.calculations {
+    width: 51px;
+    height: 20px;
+    margin-top: 50px;
+    margin-left: 5px;
+
+}
+
+#clear {
     width: 40px;
     height: 20px;
-    align-content: center;
+    margin-top: 50px;
+    margin-left: 5px;
+
+}
+
+#total {
+    margin-left: 10px;
+}
+
+#mathTable {
+    margin-left: 10px;
+
 }
