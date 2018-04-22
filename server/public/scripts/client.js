@@ -4,7 +4,8 @@ let showTotal = 0;
 $(document).ready(onReady);
 
 function onReady() {
-    function numOne() {
+
+    // function numOne() {
         $('#inputOne').on('click', oneClickHandler);
         $('#inputTwo').on('click', twoClickHandler);
         $('#inputThree').on('click', threeClickHandler);
@@ -24,43 +25,43 @@ function onReady() {
         $('#multiply').on('click', multiplyClickHandler);
         $('#enter').on('click', totalClickHandler);
         $('#divide').on('click', divideClickHandler);
-    }
+    // }
 
-    function numTwo() {
-        $('#inputOne').on('click', oneClickHandler);
-        $('#inputTwo').on('click', twoClickHandler);
-        $('#inputThree').on('click', threeClickHandler);
+    // function numTwo() {
+    //     $('#inputOne').on('click', oneClickHandler);
+    //     $('#inputTwo').on('click', twoClickHandler);
+    //     $('#inputThree').on('click', threeClickHandler);
     
-        $('#inputFour').on('click', fourClickHandler);
-        $('#inputFive').on('click', fiveClickHandler);
-        $('#inputSix').on('click', sixClickHandler);
+    //     $('#inputFour').on('click', fourClickHandler);
+    //     $('#inputFive').on('click', fiveClickHandler);
+    //     $('#inputSix').on('click', sixClickHandler);
     
-        $('#inputSeven').on('click', sevenClickHandler);
-        $('#inputEight').on('click', eightClickHandler);
-        $('#inputNine').on('click', nineClickHandler);
+    //     $('#inputSeven').on('click', sevenClickHandler);
+    //     $('#inputEight').on('click', eightClickHandler);
+    //     $('#inputNine').on('click', nineClickHandler);
     
-        $('#add').on('click', additionClickHandler);
-        $('#inputZero').on('click', zeroClickHandler);
-        $('#subtract').on('click', subtractionClickHandler);
+    //     $('#add').on('click', additionClickHandler);
+    //     $('#inputZero').on('click', zeroClickHandler);
+    //     $('#subtract').on('click', subtractionClickHandler);
     
-        $('#multiply').on('click', multiplyClickHandler);
-        $('#enter').on('click', totalClickHandler);
-        $('#divide').on('click', divideClickHandler);
+    //     $('#multiply').on('click', multiplyClickHandler);
+    //     $('#enter').on('click', totalClickHandler);
+    //     $('#divide').on('click', divideClickHandler);
     
-    }
-    function mainOperations() {
-        function addNums(); {
+    // }
+    // function mainOperations() {
+    //     function addNums(); {
 
-        }
-        function subtractNums(); {
+    //     }
+    //     function subtractNums(); {
 
-        }
-        function multiplyNums(); {
+    //     }
+    //     function multiplyNums(); {
 
-        }
-        function divideNums(); {
-            
-        }
+    //     }
+    //     function divideNums(); {
+
+    //     }
 
     displayTotal();
 }
@@ -113,8 +114,11 @@ function nineClickHandler() {
     console.log(nine);
 }
 
+
+
 function additionClickHandler() {
-    console.log(addition);
+    return numONe + numTwo;
+    console.log(total);
 }
 
 function zeroClickHandler() {
@@ -136,15 +140,18 @@ function divideClickHandler() {
 
 function totalClickHandler() {
     const total = {
-        firstNumber: $('#value').val(),
-        secondNumber: $('#value').val(),
-        operator: $('#calculations').val()
+        firstNumber: $('#number').val(),
+        operator: $('#calculations').val(),
+        secondNumber: $('#number').val(),
+        // equals:
+        // total: 
+
     };
     console.log('new total object', total);
     $.ajax({
         method: 'POST',
         url: '/add-to-array',
-        data: newSong
+        data: total
     })
         .then(function (response) {
             console.log(response);
@@ -158,9 +165,9 @@ $.ajax({
 })
     .then(function (response) {
         console.log(response);
-        $('mathHistory').empty();
+        // $('mathHistory').empty();
         response.forEach(function (newProblem) {
-            $('mathHistory').append(`<tr>
+            $('mathHistory').prepend(`<tr>
              <td>${newProblem.firstNumber}</td>
             <td>${newProblem.secondNumber}</td>
             <td>${newProblem.operator}</td>
