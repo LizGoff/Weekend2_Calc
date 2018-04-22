@@ -1,5 +1,5 @@
 
-console.log('array connected to sever side');
+// console.log('array connected to sever side');
 
 const totalArray = [];
 
